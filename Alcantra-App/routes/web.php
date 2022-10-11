@@ -14,22 +14,24 @@ use App\Http\Controllers\ApplicationController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Get
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+    Route::get('/login', function () {
+        return view('auth\login');
+    })->name('user.login');
 
-Route::get('/login', function () {
-    return view('auth\login');
-})->name('user.login');
+    Route::get('/register', function () {
+        return view('auth\register');
+    })->name('user.register');
 
-Route::get('/register', function () {
-    return view('auth\register');
-})->name('user.register');
 
-// TESTE
+    Route::middleware(['VerifyLoginAuth'])->group(function(){
+        Route::get('/home',[ApplicationController::class,'ShowHome'])->name('show.home');
+    });
 
-Route::get('/home',[ApplicationController::class,'ShowHome'])->name('show.home');
 
 
 //Post
