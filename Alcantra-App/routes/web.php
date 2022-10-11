@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ApplicationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/login', function () {
+    return view('auth\login');
+})->name('user.login');
+
+Route::get('/register', function () {
+    return view('auth\register');
+})->name('user.register');
+
+// TESTE
+
+Route::get('/home',[ApplicationController::class,'ShowHome'])->name('show.home');
+
+
+//Post
+
+    //register
+    Route::post('/action-register',[UserController::class,'UserRegister'])->name('action.register');
+
+    //login
+    Route::post('/action-login',[UserController::class,'UserLogin'])->name('action.login');

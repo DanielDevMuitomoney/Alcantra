@@ -1,0 +1,32 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 0.4px black solid ;
+    
+}
+#img-logo{
+    width: 120px;
+}
+
+nav{
+    display: flex;
+    gap: 30px;
+    font-family: 'Inter', sans-serif;
+}
+.btn-register{
+    padding: 15px;
+    background-color: #2CE74A;
+    border: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}
+.btn-entrar{
+    padding: 15px;
+    background-color: #4743ED;
+    border: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}
