@@ -4,24 +4,40 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
+
 class card extends Component
 {
-    public $ImgUser = 'default';
-    public $NameUser = 'erro ao carregar';
-    public $ImgPost = 'default-img-post';
-    public $title = 'não foi possível carregar o titulo';
-    public $text = 'não foi possível carregar o texto';
-    public $likes = 'erro';
     
+    
+    public $nameuser;
+    public $imgposts;
+    public $imguser;
+    public $title ;
+    public $text;
+    public $likes;
+    public $favorited;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title)
+    public function __construct($imguser ,$nameuser,$imgposts,$title,$text,$likes,$favorited)
     {
         //
+        $this->nameuser = $nameuser;
+        $this->imgposts = $imgposts;
+        
+        $this->imguser = $imguser;
         $this->title = $title;
+        $this->text = $text;
+        $this->likes = $likes;
+        $this->favorited = $favorited;
+        
+        
+
+        
+        
     }
 
     /**

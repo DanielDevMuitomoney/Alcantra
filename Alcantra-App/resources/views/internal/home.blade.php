@@ -13,7 +13,7 @@
 
     @section('content')
         @for ($i = 0; $i <= 5; $i++)
-        <x-card title="{{$i}}"/>
+        <x-card nameuser="daniel" imgposts="imgpost" imguser="imguser" title="title" text="text" likes="{{$i}}" favorited={{$i}}  />
         @endfor
     
     @endsection
