@@ -1,0 +1,19 @@
+.menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 0.4px solid black;
+    padding-bottom: 2px;
+}
+
+#list-menu{
+    font-size: 60px;
+    margin-right:20px ;
+}
+.img-logo{
+    width: 120px;
+    height: 100px;
+}
+#img-user{
+width: 80px;
+}
