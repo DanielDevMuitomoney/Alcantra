@@ -12,3 +12,5 @@
     </header>
 
     @yield('content')
+
+    

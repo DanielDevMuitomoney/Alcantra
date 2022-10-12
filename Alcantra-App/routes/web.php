@@ -30,6 +30,7 @@ use App\Http\Controllers\ApplicationController;
 
     Route::middleware(['VerifyLoginAuth'])->group(function(){
         Route::get('/home',[ApplicationController::class,'ShowHome'])->name('show.home');
+        //Route::get('/create-post',[])
     });
 
 

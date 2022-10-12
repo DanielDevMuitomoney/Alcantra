@@ -6,7 +6,13 @@ use Illuminate\View\Component;
 
 class card extends Component
 {
-    public $title;
+    public $ImgUser = 'default';
+    public $NameUser = 'erro ao carregar';
+    public $ImgPost = 'default-img-post';
+    public $title = 'não foi possível carregar o titulo';
+    public $text = 'não foi possível carregar o texto';
+    public $likes = 'erro';
+    
     /**
      * Create a new component instance.
      *

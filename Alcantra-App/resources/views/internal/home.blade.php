@@ -12,7 +12,10 @@
     @extends('layouts.lay_logged')
 
     @section('content')
-    <x-card title="2"/>
+        @for ($i = 0; $i <= 5; $i++)
+        <x-card title="{{$i}}"/>
+        @endfor
+    
     @endsection
 </body>
 </html>
