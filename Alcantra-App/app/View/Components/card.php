@@ -24,20 +24,14 @@ class card extends Component
      */
     public function __construct($imguser ,$nameuser,$imgposts,$title,$text,$likes,$favorited)
     {
-        //
+        // atributes of components:
         $this->nameuser = $nameuser;
         $this->imgposts = $imgposts;
-        
         $this->imguser = $imguser;
         $this->title = $title;
         $this->text = $text;
         $this->likes = $likes;
         $this->favorited = $favorited;
-        
-        
-
-        
-        
     }
 
     /**
