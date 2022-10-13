@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,30 +16,31 @@ use App\Http\Controllers\ApplicationController;
 |
 */
 //Get
-    Route::get('/', function () {
-        return view('welcome');
-    });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-    Route::get('/login', function () {
-        return view('auth\login');
-    })->name('user.login');
+Route::get('/login', function () {
+    return view('auth\login');
+})->name('user.login');
 
-    Route::get('/register', function () {
-        return view('auth\register');
-    })->name('user.register');
+Route::get('/register', function () {
+    return view('auth\register');
+})->name('user.register');
 
 
-    Route::middleware(['VerifyLoginAuth'])->group(function(){
-        Route::get('/home',[ApplicationController::class,'ShowHome'])->name('show.home');
-        //Route::get('/create-post',[])
-    });
+Route::middleware(['VerifyLoginAuth'])->group(function () {
+    Route::get('/home', [ApplicationController::class,'ShowHome'])->name('show.home');
+Route::get('/create-post',[PostController::class,'ShowCreatePost'])->name('show.createpost');
+    //Route::get('/create-post',[])
+});
 
 
 
 //Post
 
-    //register
-    Route::post('/action-register',[UserController::class,'UserRegister'])->name('action.register');
+//register
+Route::post('/action-register', [UserController::class,'UserRegister'])->name('action.register');
 
-    //login
-    Route::post('/action-login',[UserController::class,'UserLogin'])->name('action.login');
+//login
+Route::post('/action-login', [UserController::class,'UserLogin'])->name('action.login');

@@ -81,4 +81,8 @@ class PostController extends Controller
     {
         //
     }
+
+    public function ShowCreatePost(){
+        return view('internal.posts.create-post');
+    }
 }

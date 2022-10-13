@@ -14,9 +14,14 @@ return new class () extends Migration {
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id('id_post');
-            $table->string('nm_title',25);
-            $table->string('txt',120);
-            $table->
+            $table->unsignedBigInteger('fk_user');
+            $table->string('nm_title', 25);
+            $table->string('txt', 120);
+            $table->integer('num_likes');
+            $table->enum('mark', [0,1]);
+
+            //fk s
+            $table->foreign('fk_user')->references('id')->on('users');
             $table->timestamps();
         });
     }
