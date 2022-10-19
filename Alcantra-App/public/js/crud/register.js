@@ -1,5 +1,4 @@
 let BtnRegister = document.querySelector('button#btn_register_form')
-alert(BtnRegister)
 let _token = document.querySelector('input#csrf')
 let inp_name = document.querySelector("input#name")
 let email = document.querySelector("input#email")

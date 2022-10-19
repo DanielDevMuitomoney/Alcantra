@@ -30,9 +30,11 @@ Route::get('/register', function () {
 
 
 Route::middleware(['VerifyLoginAuth'])->group(function () {
+    // GET
     Route::get('/home', [ApplicationController::class,'ShowHome'])->name('show.home');
-Route::get('/create-post',[PostController::class,'ShowCreatePost'])->name('show.createpost');
-    //Route::get('/create-post',[])
+    Route::get('/create-post', [PostController::class,'ShowCreatePost'])->name('show.createpost');
+    //POST
+    Route::post('/action-create-post',[PostController::class,'create'])->name('action.create.post');
 });
 
 
