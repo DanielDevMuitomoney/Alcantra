@@ -19,7 +19,7 @@
             <form action="{{route('action.create.post')}}"  class="form-create-post">
                 @csrf
                 <label for="Titulo do post">Title</label>
-                <input id="title" type="text" >
+                <input id="title" type="text">
                 <label for="Descrição">Description</label>
                 <textarea id="description"></textarea>
                 <input type="file">
@@ -27,6 +27,8 @@
             </form>
         </section>
     </main>
+
+    <script src="js/post_js/create_post.js"></script>
     @endsection
 </body>
 </html>

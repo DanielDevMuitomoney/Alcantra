@@ -30,6 +30,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ];
+        //tenta logar
         if(Auth::attempt($credentials)){
             $response = [
                 'response' => true
