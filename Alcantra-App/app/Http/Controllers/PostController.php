@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
@@ -25,8 +26,34 @@ class PostController extends Controller
      */
     public function create(Request $request)
     {
-        //DB::table('')
-        return json_encode($r = ['number' =>2]);
+        $Post = new Post();
+        $Post->nm_title = $request->title;
+        $Post->txt = $request->desc;
+        $Post->fk_user = Auth::user()->id;
+
+
+        if ($request->hasFile('img') && $request->file('img')->isValid()) {
+            $requestImage= $request->img;
+            $extension=$requestImage->extension();
+            $imgName= md5($requestImage->getClientOriginalName(). strtotime("now")). ".". $extension;
+            $request->img->move(public_path('/img/products'), $imgName);
+            $Post->img_path= $imgName;
+            $Post->save();
+
+             redirect()->route('show.home',[
+                'mensagem' => "Sua postagem foi finalizada", 
+             ]);
+
+
+        }
+
+
+
+
+
+        
+        
+       
     }
 
     /**

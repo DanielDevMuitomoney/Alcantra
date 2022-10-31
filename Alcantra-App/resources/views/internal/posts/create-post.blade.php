@@ -16,14 +16,14 @@
     <main>
         <section class="form-section">
             <h1 class="title">Criar Post</h1>
-            <form action="{{route('action.create.post')}}"  class="form-create-post">
+            <form method="POST"  class="form-create-post" enctype="multipart/form-data" action="{{route('action.create.post')}}">
                 <input type="hidden" name="_token" id="csrf" value="{{ csrf_token() }}" />
-                <label for="Titulo do post">Title</label>
-                <input id="title" type="text">
+                <label for="Titulo do post" >Title</label>
+                <input id="title" type="text" name="title">
                 <label for="Descrição">Description</label>
-                <textarea id="description"></textarea>
-                <input type="file">
-                <button type="button" id="btn-create-post" class="btn-create-post">POSTAR</button>
+                <textarea name="desc" id="description"></textarea>
+                <input name="img" id="img-post" type="file">
+                <button type="submit" id="btn-create-post" class="btn-create-post">POSTAR</button>
             </form>
         </section>
     </main>
