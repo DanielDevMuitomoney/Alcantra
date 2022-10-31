@@ -17,7 +17,7 @@
         <section class="form-section">
             <h1 class="title">Criar Post</h1>
             <form action="{{route('action.create.post')}}"  class="form-create-post">
-                @csrf
+                <input type="hidden" name="_token" id="csrf" value="{{ csrf_token() }}" />
                 <label for="Titulo do post">Title</label>
                 <input id="title" type="text">
                 <label for="Descrição">Description</label>
