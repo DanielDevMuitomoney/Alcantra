@@ -40,9 +40,7 @@ class PostController extends Controller
             $Post->img_path= $imgName;
             $Post->save();
 
-             redirect()->route('show.home',[
-                'mensagem' => "Sua postagem foi finalizada", 
-             ]);
+             return redirect()->route('show.home');
 
 
         }

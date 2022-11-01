@@ -1,0 +1,14 @@
+.card-component{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 9px;
+}
+.card-component-img-post{
+    width: 80%;
+}
+.tools{
+    display: flex;
+    gap: 10px;
+}
